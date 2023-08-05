@@ -35,33 +35,19 @@ class slicing():
         self.sigma_2 = 10 ** (-9)
         self.alpha = 4
         self.B_C = 2000
-        self.B_T = 10  # 单位是M
+        self.B_T = 10
         self.B_M_T = 10000000 / 10
         self.P_max = 10
         self.m_C = 3000
-        self.L = 1.4  ## uRLLC服从L的二项分布
+        self.L = 1.4  
         self.m_1 = 0.001
         self.m_2 = 1
         self.psai = 800
         self.R_1_av = 20000
         self.R_2_av = 20000
-        self.p_T_1 = 0.4  # 虚拟基站1的激活概率/用户请求切片1的概率
-        self.p_T_2 = 0.6  # 虚拟基站2的激活概率/用户请求切片2的概率
-        # self.K1 = 30
+        self.p_T_1 = 0.4 
+        self.p_T_2 = 0.6 
         self.N = 3
-        # self.K_B = 20
-        # self.K2 = 30
-        # self.K3 = self.K2
-        # self.K = self.K1 + self.K2 +self.K3
-        # self.action1 = np.zeros((self.M, self.K1))  # 切片1子载波分配
-        # self.action2 = np.zeros((self.M, self.K2))  #  NOMA子载波分配
-        # self.Action1 = np.zeros((self.M, self.K1))  # 切片1功率分配
-        # self.Action2 = np.zeros((self.M, self.K2))  # 切片1功率分配
-        # self.Action3 = np.zeros((self.M, self.K3))  # 切片1功率分配
-        # self.H1 = np.zeros((self.M, self.K1))
-        # self.H2 = np.zeros((self.M, self.K2))
-        # self.H3 = np.zeros((self.M, self.K3))
-        # self.Q3 = np.zeros(self.K3)
         self.action_high = np.array(
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -117,7 +103,6 @@ class slicing():
              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-             # 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
              2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
              2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
              2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
